@@ -1,48 +1,126 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Attention AI Check</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Focus Insight</title>
+  <meta name="description" content="Focus Insight — AI-driven attention insights for students (demo)." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>🎯 Attention AI Check</h1>
-    <p>나의 집중력을 관리하고 목표를 달성해보세요!</p>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-circle" aria-hidden="true">FI</div>
+        <div class="brand-text">
+          <h1>Focus Insight</h1>
+          <p class="tag">Your Focus, Scientifically Understood.</p>
+        </div>
+      </div>
+      <nav class="top-nav" aria-label="Main Navigation">
+        <a href="#about">About</a>
+        <a href="#method">Method</a>
+        <a href="#start" class="primary">Start Focus Check</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="left">
+          <h2>집중을 데이터로 이해하세요</h2>
+          <p class="lead">
+            Focus Insight는 간단한 입력만으로 데모 분석 리포트를 생성합니다.
+            (경진대회 데모용 — 실제 임상 진단이 아닙니다.)
+          </p>
 
-    <!-- 목표 입력 영역 -->
-    <section id="goal-section">
-      <h2>오늘의 목표</h2>
-      <input type="text" id="goal-input" placeholder="오늘 어떤 목표를 이루고 싶나요?" />
-      <button id="goal-save-btn">저장</button>
-      <p id="goal-display"></p>
+          <label for="user-input" class="sr-only">학습 상태 또는 질문 입력</label>
+          <textarea id="user-input" placeholder="예) 오늘 수업 중 자꾸 산만해요. 어떻게 하면 집중할 수 있을까요?" rows="5"></textarea>
+
+          <div class="controls">
+            <button id="analyze-btn" class="btn large">Start Focus Check</button>
+            <button id="quick-scan" class="btn ghost">Quick demo</button>
+          </div>
+
+          <div class="note">
+            <strong>Tip:</strong> 데모는 입력 텍스트를 기반으로 임의 점수를 생성합니다. 실제 기능은 추후 Gemini 연동으로 확장 예정.
+          </div>
+        </div>
+
+        <aside class="right" aria-live="polite">
+          <div class="result-card" id="result-card" hidden>
+            <h3>Focus Insight Report</h3>
+
+            <div class="score-row">
+              <div class="score-circle" id="score-circle" aria-hidden="true">--</div>
+              <div class="score-text">
+                <p id="score-label">Awaiting analysis</p>
+                <p class="sub">간단 요약 및 권장 전략</p>
+              </div>
+            </div>
+
+            <div class="metrics">
+              <div class="metric">
+                <label>집중력</label>
+                <progress id="m1" max="100" value="0"></progress>
+              </div>
+              <div class="metric">
+                <label>억제능력</label>
+                <progress id="m2" max="100" value="0"></progress>
+              </div>
+              <div class="metric">
+                <label>지속성</label>
+                <progress id="m3" max="100" value="0"></progress>
+              </div>
+            </div>
+
+            <div class="recommend">
+              <h4>권장 전략</h4>
+              <ul id="rec-list">
+                <li>분할 학습(25분 집중, 5분 휴식)</li>
+                <li>환경 소음 최소화</li>
+                <li>사전 계획 수립 후 작은 보상 설정</li>
+              </ul>
+            </div>
+
+            <div class="report-actions">
+              <button id="export-pdf" class="btn small">Download PDF</button>
+              <button id="retest" class="btn ghost small">Retest</button>
+            </div>
+          </div>
+
+          <div class="placeholder" id="placeholder">
+            <h3>빠른 데모 리포트</h3>
+            <p>Start Focus Check 버튼을 눌러 간단한 분석 리포트를 생성하세요.</p>
+          </div>
+        </aside>
+      </div>
     </section>
 
-    <!-- 타이머 영역 -->
-    <section id="timer-section">
-      <h2>학습 집중 타이머</h2>
-      <div id="timer">25:00</div>
-      <button id="start-btn">시작</button>
-      <button id="reset-btn">초기화</button>
+    <section id="about" class="info container content-block">
+      <h3>About Focus Insight</h3>
+      <p>
+        Focus Insight는 데모용으로 제작된 제출용 웹입니다. 실제 측정은 아니며,
+        CPT/AX-CPT 같은 검사의 개념을 바탕으로 한 프로파일 시각화를 보여줍니다.
+      </p>
     </section>
 
-    <!-- 화이트 노이즈 버튼 -->
-    <section id="sound-section">
-      <h2>학습 사운드</h2>
-      <button id="white-noise-btn">화이트 노이즈 ON/OFF</button>
+    <section id="method" class="container content-block">
+      <h3>Method (Demo)</h3>
+      <p>
+        입력 텍스트 기반의 임의 점수 산정, 3개 지표(집중력·억제능력·지속성)를 시각화하여
+        데모 리포트를 제공합니다. 이후 Gemini API 연동 시 모델 기반 분석으로 확장 가능합니다.
+      </p>
     </section>
-
   </main>
 
-  <footer>
-    <p>AI 기반 집중 관리 데모 페이지</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© Focus Insight • Demo build for CTL Membership contest</small>
+    </div>
   </footer>
-<link rel="stylesheet" href="style.css">
-<script src="app.js" defer></script>
 
+  <script src="app.js" defer></script>
 </body>
 </html>
