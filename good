@@ -1,0 +1,56 @@
+index.html
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attention AI Check</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Study Focus</h1>
+    <p>나만의 몰입 학습 공간</p>
+</header>
+
+<main>
+
+    <!-- Timer Section -->
+    <section class="timer-section">
+        <h3>집중 모드</h3>
+        <div class="timer">25:00</div>
+        <button class="start-btn">시작</button>
+        <div class="timer-options">
+            <button>25분 집중</button>
+            <button>5분 휴식</button>
+            <button>직접 설정</button>
+        </div>
+    </section>
+
+    <!-- Learning Quick Access -->
+    <section class="links">
+        <h3>학습 바로가기</h3>
+        <div class="buttons">
+            <button>구글 클래스룸</button>
+            <button>단어 테스트</button>
+            <button>인강 듣기</button>
+            <button>추가하기</button>
+        </div>
+    </section>
+
+    <!-- Today's Goals -->
+    <section class="goals">
+        <h3>오늘의 학습 목표</h3>
+        <input type="text" placeholder="할 일을 입력하고 Enter…">
+    </section>
+
+</main>
+
+<footer>
+    <p>Powered by Attention AI Check</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
