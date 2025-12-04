@@ -1,0 +1,5 @@
+console.log("Attention AI Check Loaded!");
+
+document.querySelector(".start-btn").addEventListener("click", () => {
+    alert("타이머 기능은 곧 연결됩니다! ⏱️");
+});
