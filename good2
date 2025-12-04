@@ -1,0 +1,39 @@
+style.css
+app.js
+body {
+    font-family: "Pretendard", sans-serif;
+    background: #EFF3FA;
+    color: #222;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    padding: 30px 0;
+}
+
+.timer-section {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 16px;
+}
+
+.timer {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.start-btn {
+    margin-top: 10px;
+    width: 120px;
+    height: 45px;
+    border: none;
+    background: #4A43EC;
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
