@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attention AI Check</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎯 Attention AI Check</h1>
+    <p>나의 집중력을 관리하고 목표를 달성해보세요!</p>
+  </header>
+
+  <main>
+
+    <!-- 목표 입력 영역 -->
+    <section id="goal-section">
+      <h2>오늘의 목표</h2>
+      <input type="text" id="goal-input" placeholder="오늘 어떤 목표를 이루고 싶나요?" />
+      <button id="goal-save-btn">저장</button>
+      <p id="goal-display"></p>
+    </section>
+
+    <!-- 타이머 영역 -->
+    <section id="timer-section">
+      <h2>학습 집중 타이머</h2>
+      <div id="timer">25:00</div>
+      <button id="start-btn">시작</button>
+      <button id="reset-btn">초기화</button>
+    </section>
+
+    <!-- 화이트 노이즈 버튼 -->
+    <section id="sound-section">
+      <h2>학습 사운드</h2>
+      <button id="white-noise-btn">화이트 노이즈 ON/OFF</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>AI 기반 집중 관리 데모 페이지</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
